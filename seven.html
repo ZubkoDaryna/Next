@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+   <meta charset="utf-8">
+   <meta name="author" content="Зубко Дарина Євгенівна">
+   <meta name="description" content="Приклад веб-сторінки">
+   <meta name="keywords" content="веб-сторінка, розробка, HTML-посібник">
+   <title>About me</title>
+
+   <script src="Seven.js"></script>   
+
+   <style>
+      * {
+         padding: 0;
+         box-sizing: border-box;
+         font-family: sans-serif;
+         list-style: none;
+         text-decoration:none;
+
+      }
+
+      body {
+         height: 100vh;
+         background: url(https://cdn.pixabay.com/photo/2014/12/04/14/46/magnolia-trees-556718_1280.jpg) no-repeat;
+         background-size: cover;
+         background-position: center;
+      }
+
+      header {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   background: rgba(255, 255, 255, 0.9); 
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 8%;
+   z-index: 1;
+}
+
+      header .logo {
+         color: rgba(137, 43, 226, 0.824); 
+         font-size: 26px;
+      }
+      header nav ul li{
+         position: relative;
+         float: left;
+      
+      }
+      header nav ul li a {
+       padding: 20px;
+       color: rgba(137, 43, 226, 0.824);
+       font-size: 20px;
+       display: block;
+      }
+      header nav ul li a:hover {
+         background: #dc2ce8;
+      color: #fff;
+      }
+      
+      .main {
+         display: flex;
+         align-items:center;
+         height:40vh;
+         padding: 0 25%; 
+         color: black; 
+         font-size: 24px;
+      }   
+     .centered {
+   text-align: center;
+   margin: 20 px;
+
+}
+img {
+  border-radius: 50%;
+  width: 230px; 
+  height: 230px; 
+  object-fit: cover;
+  object-position: top;
+  margin-top: 20px; 
+  margin-left: 15px; 
+  cursor: pointer; 
+
+}
+
+img:hover {
+  transform: scale(1.3); 
+  cursor: pointer; 
+}
+
+#taskForm {
+            text-align: center;
+            margin-bottom: 50 px;
+        }
+
+        input {
+         text-align: center;
+
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+         text-align: center;
+
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        p {
+         text-align: center;
+
+            font-size: 18px;
+            margin-top: 20px;
+         
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+
+   </style>
+</head>
+<body  >
+   <header>
+      <a href="#" class="logo">Lab7</a>
+
+      <nav>
+         <ul>
+            <li><a href="https://zubkodaryna.github.io/test/">About me</a></li>
+            <li><a href="https://zubkodaryna.github.io/test/Second2.html#">Pharmacy's history</a></li>
+            <li><a href="https://zubkodaryna.github.io/test/Third.html#">Pharmacy</a></li>
+         </ul>
+      </nav>
+   </header>
+<br>
+   <h1 class="centered" style="margin-top: 70px;">Hi. I'm Daryna Zubko</h1>
+   <h2 class="centered" style="margin-top: 20px;">I'm a student and now I am nineteen</h2>
+   
+<img src="https://images.unsplash.com/photo-1565711561500-49678a10a63f?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"ondblclick="imageDoubleClick(this)"/> 
+<img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"onclick="imageClick('Image 2')"/> 
+<img src="https://cdn.pixabay.com/photo/2023/07/31/13/42/anime-art-8161031_1280.png"onmouseup="mouseUp(event)"/> 
+<img src="https://cdn.pixabay.com/photo/2023/08/18/16/37/ai-generated-8198911_640.png"onmouseout="mouseOut(this)"/> 
+<img src="https://cdn.pixabay.com/photo/2014/08/16/18/17/book-419589_640.jpg" onclick="imageClick('Image 5')"/> 
+<img src="https://cdn.pixabay.com/photo/2015/09/23/22/56/dog-954520_640.jpg"ondblclick="imageDoubleClick(this)"/> 
+<br>
+<form id="taskForm">
+  
+   <input type="text" id="userInput" placeholder="масив для виведення"/>
+   <button type="button" onclick="addItem()">Add Item</button>
+   <button type="button" onclick="runTask()">Run Task</button>
+   <textarea id="output" rows="5" cols="30"></textarea>
+</form>
+<br>
+ <form id="arrayForm">
+        <input type="text" id="userInput" placeholder="Введіть елементи масиву, розділені комою (наприклад, 1, 2, -3)">
+        <button type="button" onclick="addItem()">Add Item</button>
+        <button type="button" onclick="performArrayTask()">Run Task</button>
+    </form>
+  
+    <br>
+    <br>
+
+    <form id="searchForm">
+        <label for="inputText">Введіть текст:</label>
+        <input type="text" id="inputText" placeholder="підрахунок цифр" />
+        <button type="button" onclick="searchInfo()">Пошук інформації</button>
+    </form>
+
+    <p id="result"></p>
+
+     <h1>Array Task</h1>
+
+    
+</body>
+</html>
